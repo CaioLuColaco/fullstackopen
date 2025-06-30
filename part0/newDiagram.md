@@ -1,7 +1,15 @@
-sequenceDiagram
+Exercise 0.4:
 ```mermaid
+sequenceDiagram
     participant browser
     participant server
+
+    Note right of browser: The user fill the note's input and press the submit button
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: Status 302 - No Content
+    deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
@@ -18,12 +26,14 @@ sequenceDiagram
     server-->>browser: the JavaScript file
     deactivate server
 
-    Note right of browser: O navegador começa a executar o código JavaScript que busca o JSON do servidor
+    activate browser
+    Note right of browser: The browser execute the javascript code to get the notes json from the server
+    deactivate browser
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: [{ "content": "HTML é fácil", "date": "2023-1-1" }, ... ]
+    server-->>browser: [{ "content": "Bora Vozão!", "date": "2001-11-20" }, ... ]
     deactivate server
 
-    Note right of browser: O navegador executa a função callback (função de retorno de chamada) que renderiza as notas
+    Note right of browser: The browser execute the callback's function to render the notes updated
 ```
