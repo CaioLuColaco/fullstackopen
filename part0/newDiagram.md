@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     participant browser
     participant server
@@ -25,3 +26,4 @@ sequenceDiagram
     deactivate server
 
     Note right of browser: O navegador executa a função callback (função de retorno de chamada) que renderiza as notas
+```
