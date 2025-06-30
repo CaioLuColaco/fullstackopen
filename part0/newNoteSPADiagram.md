@@ -1,4 +1,4 @@
-Exercise 0.4:
+Exercise 0.6:
 ```mermaid
 sequenceDiagram
     participant browser
